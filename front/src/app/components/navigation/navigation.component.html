@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container fs-5">
+
+        <a class="navbar-brand fs-2 fw-bold text-center text-success" routerLink="/">Dienos pietūs</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+
+                <li class="nav-item mt-1 mx-3">
+                    <a class="nav-link" *ngIf="authService.canEditUsers()" routerLink="users/list" aria-current="page">Vartotojų sąrašas</a>
+                </li>
+                <li class="nav-item mt-1">
+                    <a class="nav-link" *ngIf="authService.canEditLecturesAndGroups()" aria-current="page" routerLink="courses/list">Kursai</a>
+                </li>
+
+
+                <li class="nav-item mt-1 mx-3">
+                    <a class="nav-link" *ngIf="authService.canEditLecturesAndGroups()" aria-current="page" routerLink="groups/list">Grupės</a>
+                </li>
+
+
+                <li class="nav-item mt-1 mx-3">
+                    <a class="nav-link" *ngIf="authService.canEditLecturesAndGroups()" aria-current="page" routerLink="lectures/list">Paskaitos</a>
+                </li>
+
+                <li class="nav-item mt-1 mx-3">
+                    <a class="nav-link" *ngIf="authService.canEditLecturesAndGroups()" routerLink="users/new" aria-current="page">Registruoti studentą</a>
+                </li>
+
+                <li class="nav-itemmt-1 mx-3">
+                    <a class="nav-link" *ngIf="authService.canViewGroup()" routerLink="groups/studentGroup" aria-current="page">Mano grupės</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="d-flex">
+            <a routerLink="/auth/signin" class="btn btn-secondary mx-3 fs-5" *ngIf="!isLoggedin">Registruotis</a>
+            <a routerLink="/auth/login" class="btn btn-danger fs-5" *ngIf="!isLoggedin">Prisijungti</a>
+
+            <a routerLink="/profile" class="btn btn-secondary mx-3 fs-5" *ngIf="isLoggedin">Mano profilis</a>
+            <button class="btn btn-danger fs-5" (click)="logoutClick()" *ngIf="isLoggedin">X</button>
+        </div>
+    </div>
+</nav>

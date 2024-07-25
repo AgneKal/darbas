@@ -1,0 +1,23 @@
+<div *ngIf="!isError" class="card mt-3">
+    <div class="card-header">
+        Pridėti naują patiekalą
+    </div>
+    <div class="card-body">
+        <form (ngSubmit)="productSubmit(f)" #f="ngForm">
+            <div class="mb-3">
+                <label for="" class="form-label">Pavadinimas</label>
+                <input type="text" class="form-control" name="name" value="" ngModel minlength="2" maxlength="64" required #inputName="ngModel">
+            </div>
+            <div *ngIf="!inputName.valid && inputName.touched">Klaidingai įvestas pavadinimas</div>
+            <div class="mb-3">
+                <label for="" class="form-label">Kaina</label>
+                <input type="number" class="form-control" name="price" value="" required ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Savaitės diena</label>
+                <input type="text" class="form-control" name="weekday" value="" required ngModel>
+            </div>
+            <button class="btn btn-success" type="submit">Pridėti</button>
+        </form>
+    </div>
+</div>
