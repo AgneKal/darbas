@@ -4,5 +4,6 @@ export interface Product extends RowDataPacket{
     id?: number;
     name: string;
     price: number;
-    weekday: string
+    weekday: string;
+    rating: number
 }

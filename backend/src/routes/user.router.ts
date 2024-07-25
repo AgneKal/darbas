@@ -1,8 +1,6 @@
 import express from "express";
 import { UserController } from "../contollers/user.contoller";
 
-
-
 const userRouter = express.Router();
 
 userRouter.get('/', UserController.getAll);

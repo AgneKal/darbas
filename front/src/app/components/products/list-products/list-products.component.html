@@ -1,1 +1,30 @@
-<p>list-products works!</p>
+<div class="card mt-3">
+    <div class="card-header">
+        Patiekalų sąrašas
+    </div>
+    <div class="card-body">
+        <table class="table col-md-12">
+            <thead>
+                <tr>
+                    <th>Pavadinimas</th>
+                    <th>Kaina</th>
+                    <th>Savaitės diena</th>
+                    <th>Reitingas</th>
+                    <th>Veiksmai</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products; let i = index">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.weekday }}</td>
+                    <td>{{ product.rating }}</td>
+                    <td>
+                        <a class="btn btn-success">Redaguoti</a>&nbsp;&nbsp;
+                        <button class="btn btn-danger">Ištrinti</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

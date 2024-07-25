@@ -10,30 +10,13 @@
 
 
                 <li class="nav-item mt-1 mx-3">
-                    <a class="nav-link" *ngIf="authService.canEditUsers()" routerLink="users/list" aria-current="page">Vartotojų sąrašas</a>
-                </li>
-                <li class="nav-item mt-1">
-                    <a class="nav-link" *ngIf="authService.canEditLecturesAndGroups()" aria-current="page" routerLink="courses/list">Kursai</a>
-                </li>
-
-
-                <li class="nav-item mt-1 mx-3">
-                    <a class="nav-link" *ngIf="authService.canEditLecturesAndGroups()" aria-current="page" routerLink="groups/list">Grupės</a>
-                </li>
-
-
-                <li class="nav-item mt-1 mx-3">
-                    <a class="nav-link" *ngIf="authService.canEditLecturesAndGroups()" aria-current="page" routerLink="lectures/list">Paskaitos</a>
+                    <a class="nav-link" routerLink="products/list" aria-current="page">Patiekalų sąrašas</a>
                 </li>
 
                 <li class="nav-item mt-1 mx-3">
-                    <a class="nav-link" *ngIf="authService.canEditLecturesAndGroups()" routerLink="users/new" aria-current="page">Registruoti studentą</a>
+                    <a class="nav-link" routerLink="orders/list" aria-current="page">Užsakymų sąrašas</a>
                 </li>
-
-                <li class="nav-itemmt-1 mx-3">
-                    <a class="nav-link" *ngIf="authService.canViewGroup()" routerLink="groups/studentGroup" aria-current="page">Mano grupės</a>
-                </li>
-
+                
             </ul>
         </div>
         <div class="d-flex">

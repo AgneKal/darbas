@@ -13,8 +13,6 @@ import { Router } from '@angular/router';
 })
 
 export class NewProductComponent {
-  public isError=false;
-  public errorText="";
   constructor (private productsService:ProductsService, private router:Router){
  
   }
@@ -23,10 +21,6 @@ export class NewProductComponent {
     this.productsService.addProduct(form.form.value).subscribe({
       next:(data)=>{
         this.router.navigate(['products','list']);
-      },
-      error:(error)=>{
-        this.isError=true;
-        this.errorText=error.error.text;
       }
     });
   }

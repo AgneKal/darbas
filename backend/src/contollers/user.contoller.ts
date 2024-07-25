@@ -2,7 +2,6 @@ import path from "path";
 import { pool } from "../db/connect";
 import { User } from "../models/user";
 import bcrypt from "bcrypt";
-import fs from 'fs';
 
 export class UserController {
     static async getAll(req: any, res: any){
